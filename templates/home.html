@@ -1,57 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ilab Careers</title>
-      <style>
-        h1 {
-          font-size: 40px;
-          font-family: Roboto;
-          font-weight: normal;
-          color: rgb(50,50,50);
-          text-align: center;
-        }
-
-        #banner {
-          width: 100%;
-          height: 360px;
-          object-fit: cover;
-        } 
-
-        h2 {
-          font-family: Roboto;
-          font-size: 32px;
-          color: rgb(100,100,100);
-          text-align: center;
-          font-weight: normal;
-
-        p {
-          font-family: Roboto;
-          color: rgb(80, 80, 80);
-        }
-  
-        #container{
-          max-width: 720px;
-          margin: 0 auto;
-        }
-      </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+    <title>Ilab Careers</title>  
   </head>
 <body>
-  <div id = "container">
-    <h1>Open Vaccancies</h1>
-    <img id= "banner" src="static/Img_2.jpg.jpg">
-    <h2>About Ilab</h2>
-      <p>
+  <div class = "container">
+    <h1 class = "text-center mt-2 mb-4" >Open Vaccancies</h1>
+    <img class = "img-fluid" id= "banner" src="static/Img_2.jpg.jpg">
+    <h2 class = "text-center mt-2 mb-4 ">About Ilab</h2>
+      <p class = "lead">
         
 Ilab Technologies, a leading tech firm, operates at the forefront of innovation, constantly pushing the boundaries of technology. With a team of brilliant engineers and designers, the company focuses on developing cutting-edge software and hardware solutions that revolutionize industries. The workings of Ilab involve a seamless collaboration between departments, where engineers brainstorm ideas, prototype concepts, and conduct rigorous testing to ensure the highest standards of quality. The research and development team constantly explores emerging technologies, keeping a keen eye on market trends and consumer demands. With an agile approach, the firm adapts swiftly to changing needs, employing an iterative development process to deliver scalable and robust solutions.
 
       </p>              
-    <h2>Open Positions</h2>
-    <p>
-      Show the Jobs here
-    </p>
-    <div style="text-align:center;">
-      <button>Contact us</button>
-      <p>Copyright 2023, DenMuendo</p>
+    <h2 class = "text-center mt-2 mb-4 ">Open Positions</h2>
+    <div >
+       {% for job in jobs %}      
+        {% include 'jobitem.html' %}    
+       {% endfor %}
+    </div>
+    <div class = "text-center" >
+      <button class="btn btn-primary btn-lg" >Contact us</button>
+        <p class = "mt-4">Copyright 2023 DenMuendo</p>
     </div>
   </div>
 </body>
